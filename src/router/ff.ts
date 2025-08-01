@@ -20,11 +20,11 @@ export default async function ff(id: number): Promise<Result> {
   // Ambil nickname dari roles
   const nickname = data?.confirmationFields?.roles?.[0]?.role || ''
 
-  return {
-    success: nickname !== '',
-    game: 'Garena Free Fire',
-    id,
-    name: nickname,
-    message: nickname !== '' ? 'OK' : 'Nickname tidak ditemukan'
-  }
+ return {
+  success: true,
+  game: 'Garena Free Fire',
+  id,
+  name: data.confirmationFields?.roles?.[0]?.role || '(nickname tidak ditemukan)',
+  raw: data // <-- buat debug
+}
 }
