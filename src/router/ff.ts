@@ -18,12 +18,4 @@ export default async function pb(id: number): Promise<Result> {
     }
   }
 }
-    }
-  }
-  else {
-    return {
-      success: false,
-      message: 'Not found'
-    }
-  }
-}
+
