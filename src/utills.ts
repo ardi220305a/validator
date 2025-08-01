@@ -9,10 +9,10 @@ export function timeNow(): number {
 }
 
 export async function hitCoda(body: string): Promise<unknown> {
-  const response = await fetch('https://www.midasbuy.com/interface/getCharac', {
+  const response = await fetch('https://topupkuy.gg/api/nickname/validate', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
     body
   })
@@ -20,7 +20,7 @@ export async function hitCoda(body: string): Promise<unknown> {
 }
 
 export interface Result {
-  success: boolean
+  success: number
   game?: string
   id?: number | string
   server?: string | number,
