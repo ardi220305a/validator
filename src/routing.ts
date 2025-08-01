@@ -1,4 +1,5 @@
 import { getUrl, Result } from './utils'
+import { getUrl, Result } from './utills'
 import * as router from './router'
 
 export default async function callAPI(request: Request): Promise<Result> {
@@ -46,7 +47,9 @@ export default async function callAPI(request: Request): Promise<Result> {
       case path.includes('/valo'):
         return await router.valo(id)
       case path.includes('/zzz'):
-        return await router.zzz(Number(id))
+        return await router.zzz(Number(id)
+      case path.includes('/pubg'):
+        return await router.pubg(Number(id))
       default:
         return {
           success: false,
