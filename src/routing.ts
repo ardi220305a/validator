@@ -46,6 +46,8 @@ export default async function callAPI(request: Request): Promise<Result> {
         return await router.sus(Number(id))
       case path.includes('/valo'):
         return await router.valo(id)
+      case path.includes('/pubg'):
+        return await router.pubg(Number(id)
       case path.includes('/zzz'):
         return await router.zzz(Number(id))
       default:
