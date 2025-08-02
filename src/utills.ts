@@ -8,8 +8,8 @@ export function timeNow(): number {
   return Date.now()
 }
 
-export async function hitCoda(body: string): Promise<unknown> {
-  const response = await fetch('https://topupkuy.gg/api/nickname/validate', {
+export async function hitCoda(body: string): Promise<any> {
+  const response = await fetch('https://topupkuy.gg/api/invoice/validate', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
@@ -20,10 +20,10 @@ export async function hitCoda(body: string): Promise<unknown> {
 }
 
 export interface Result {
-  success: number
+  success: boolean      // diubah ke boolean biar sesuai return pb()
   game?: string
   id?: number | string
-  server?: string | number,
+  server?: string | number
   name?: string
   message?: string
 }
