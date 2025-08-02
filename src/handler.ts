@@ -1,4 +1,5 @@
 import { allowedMethod, timeNow } from './utils'
+import { allowedMethod, timeNow } from './utills'
 import serveResult from './helpers'
 
 export default async function checkCache(request: Request): Promise<Response> {
