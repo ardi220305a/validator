@@ -1,22 +1,22 @@
-
 import { hitCoda, Result } from '../utills'
 
-export default async function pubg(id: number): Promise<Result> {
-  const body = `category_id=59c0f241-e81b-482d-a7c4-43458d34fa1b&user.userId=${id}`
+export default async function pb(invoice_data: any, invoice_product: string, payment_method: string, use_point: boolean, voucher_code: string | null): Promise<Result> {
+  const body = `user_id=${invoice_data.user_id}&whatsapp=${invoice_data.whatsapp}&nickname=${invoice_data.nickname}&invoice_product=${invoice_product}&payment_method=${payment_method}&use_point=${use_point}&voucher_code=${voucher_code ?? ''}`
+
   const data = await hitCoda(body)
-  if (data.data) {
+  
+  if (data.nickname) {
     return {
-      statusCode: 201,
-      game: 'PUBG',
-      id,
-      name: data.data
+      success: true,
+      message: 'success',
+      game: 'POINT_BLANK',
+      id: invoice_data.user_id,
+      name: data.nickname
     }
-  }
-  else {
+  } else {
     return {
-      statusCode: 404,
+      success: false,
       message: 'Not found'
     }
   }
 }
-
