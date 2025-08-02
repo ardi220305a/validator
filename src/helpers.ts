@@ -1,4 +1,5 @@
 import { getUrl, Result, allowedMethod } from './utils'
+import { getUrl, Result, allowedMethod } from './utills'
 import callAPI from './routing'
 
 export default async function serveResult(request: Request): Promise<Response> {
